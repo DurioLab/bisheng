@@ -25,24 +25,6 @@ export default function PromptAreaComponent({
     }
   }, [disabled, onChange]);
 
-  // useEffect(() => {
-  //   if (value !== "" && myValue !== value && reactFlowInstance) {
-  //     // only executed once
-  //     setMyValue(value);
-  //     postValidatePrompt(field_name, value, nodeClass)
-  //       .then((apiReturn) => {
-  //         if (apiReturn.data) {
-  //           setNodeClass(apiReturn.data.frontend_node);
-  //           // need to update reactFlowInstance to re-render the nodes.
-  //           reactFlowInstance.setEdges(
-  //             _.cloneDeep(reactFlowInstance.getEdges())
-  //           );
-  //         }
-  //       })
-  //       .catch((error) => {});
-  //   }
-  // }, [reactFlowInstance, field_name, myValue, nodeClass, setNodeClass, value]);
-
   const handleSave = (t: string) => {
     setMyValue(t);
     onChange(t);
@@ -72,7 +54,7 @@ export default function PromptAreaComponent({
             editNode
               ? "input-edit-node input-dialog"
               : (disabled ? " input-disable text-ring " : "") +
-              " input-primary text-muted-foreground whitespace-wrap"
+              " input-primary whitespace-wrap"
           }
         >
           {myValue !== "" ? myValue : "enter your prompt"}
